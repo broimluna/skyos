@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="system/css/style.css" type="text/css" rel="stylesheet">
+        <link href="system/css/themes/default.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="system/js/kernel.js" type="text/javascript"></script>
+        <script src="system/js/desktop.js" type="text/javascript"></script>
+        <script src="system/js/taskbar.js" type="text/javascript"></script>
+
+    </head>
+
+    <body onload="startServices();">
+        <desktop>
+
+            <!--<window data-title="Calculator" data-html="true" appicon="<img src='system/img/icons/placeholder.png'  width='28' height='28'>">
+            <iframe src="apps/calculator/index.html"></iframe>         
+            </window>-->
+
+ 
+
+
+
+
+            <div id="appsmenu">
+                <div class="applist">
+					<center>                    
+					<li onclick="openWindow(1)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Placeholder</a></li>
+                   <!--<li onclick="openWindow(2)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Notepad</a></li>
+                    <li onclick="openWindow(3)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Calendar</a></li>
+                    <li onclick="openWindow(4)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Calculator</a></li>
+                    <li onclick="openWindow(5)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Minesweeper</a></li>
+                    <li onclick="openWindow(6)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>VMBox</a></li>
+                    <li onclick="openWindow(7)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Bronze</a></li>
+					<li onclick="openWindow(9)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Terminal</a></li>
+					<li onclick="openWindow(10)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Media Player</a></li>
+					<li onclick="openWindow(11)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Release Notes</a></li>-->
+                    </center>
+				</div>
+				<div class="quickweanews">
+                    <h1>Welcome back!</h1>
+                    <div class="qwncontainer">
+                        <div class="newsSection">
+                            <div id="quinews">
+                                <script src="https://rss.bloople.net/?url=https%3A%2F%2Fwww.theverge.com%2Frss%2Findex.xml&showtitle=false&type=js"></script>
+                               </div>
+                        </div>
+                        <hr class="qwnhr">
+                        <div class="weatherSection">
+                            <div class="weather"></div>
+                            <div class="owmlink">Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></div>
+                        </div>
+                      </div>
+                      
+                      <style>
+                        
+                      </style>                      
+				</div>
+                <div id="userProfile">
+                    <hr>
+                    <div><img border="0" class="pfpimage" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br><a class="userProfileTxt">User</a></div>
+                    <a id="settingsUP" onclick="openWindow(8)"><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"></a>
+                </div>
+            </div>
+
+            <taskbar>
+            <taskbarapp onclick="appstoggle();" id="skybutton"><img src='system/img/icons/skyos.png'  width='22' height='28'></taskbarapp>
+            <div class="timendate"></div>
+            </taskbar>
+
+            <watermark></watermark>
+        </desktop>
+    </body>
+</html>

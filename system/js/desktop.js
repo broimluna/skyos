@@ -1,0 +1,4 @@
+function startServices() {
+    timeService();
+    weatherService();
+}
