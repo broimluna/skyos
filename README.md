@@ -1,2 +1,2 @@
-# skyos
+# skyOS
 A fresh start.
