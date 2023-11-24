@@ -4,7 +4,7 @@ var windowid = 1
 var developer_name = "Luna"
 var product_name = "skyOS";
 var kernel_version = "1.0";
-var build_number = "700.87";
+var build_number = "700.120";
 document.title = product_name;
 
 $(document).ready(function(){

@@ -38,6 +38,7 @@ desktop {
 window {
     background-color: rgba(173, 216, 230, 0.500);
     backdrop-filter: blur(5px);
+    border: 2px solid rgba(0, 0, 0, 0.200)
 }
 taskbar {
     background-color: rgba(255, 255, 255, 0.250);
@@ -47,8 +48,9 @@ taskbar {
 
 taskbarapp {
     background-color: transparent !important;
-    padding: 13px 5px 5px 5px;
+    padding: 12.7px 5px 5px 5px;
     transition: 0.2s;
+    right: 5px;
 }
 taskbarapp.active {
     background: rgba(0, 0, 0, 0.25) !important;
@@ -75,9 +77,16 @@ taskbarapp.active::before {
     background-color: white;
     transition: 0.2s;
 }
+windowheader {
+   border-bottom: 0px solid black;
+}
+windowheader > strong {
+    margin: 0 0 0 4px
+}
 #skybutton {
     display: inline !important;
     transition: 0.2s;
+    left: 0 !important
 }
 #skybutton.active {
     background: rgba(0, 0, 0, 0.25) !important;
@@ -90,7 +99,7 @@ taskbarapp.active::before {
     height: 3px;
     bottom: 1px;
     left: 0;
-    margin: 0 12px;
+    margin: 0 9px;
     position: absolute;
     right: 0;
     background-color: white;
@@ -117,13 +126,17 @@ iframe {
 watermark {
     color: white;
 }
+.fullSizeWindow > .wincontent {
+    height: 97.5% !important;
+    width: 100% !important;
+}
 /*Apps menu*/
 #appsmenu {
     position: absolute;
     bottom: 36px;
     left: 0;
     right: 0;
-    width: 500px;
+    width: 525px;
     height: 0;
     border-top-right-radius: 8px;
     border: 2px solid transparent;
@@ -211,6 +224,7 @@ watermark {
 #userProfile img {
     margin: 0px 3px;
     border-radius: 16px;
+    background: #ffffff3b;
 }
 #userProfile hr {
     margin: 0 !important;
@@ -259,6 +273,9 @@ watermark {
 .feed-title, .feed-item-title {
     margin: 0 0 10px 0 !important;
 }
+.feed-title > a {
+    font-size: 20px !important;
+}
 #quinews a {
       color: black
 }
@@ -273,17 +290,9 @@ watermark {
 .newsSection, .weatherSection {
     width: 100%;
     height: 137px;
+    border-top: 2px solid rgba(0, 0, 0, 0.250);
 }
                       
-                        .newsSection {
-                            border: 2px solid rgba(0, 0, 0, 0.250);
-                            border-radius: 8px;
-                        }
-                      
-                        .weatherSection {
-                            border: 2px solid rgba(0, 0, 0, 0.250);
-                            border-radius: 8px;                        
-                        }
                       
                         .qwnhr {
                           width: 100%;
@@ -296,19 +305,78 @@ watermark {
                         .weather {
                             top: 0;
                             left: 2px;
+                            white-space: nowrap;
                             position: relative;
+                        }
+                        .weathermain {
+                            height: 28px;
+                            font-size: 20px;
                         }
                         .owmlink {
                                 bottom: 0px;
                                 left: 3px;
                                 position: absolute;
                         }
+/*Right click menu*/
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.250);
+    backdrop-filter: blur(5px);   
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.2s;
+}
+
+
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 150px;
+    list-style: none;
+}
+
+.context-menu ul li {
+    border-radius: 7px;
+    background: transparent;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    border: 2px solid transparent;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.context-menu ul li:hover {
+    background: #00000024;
+    border: 2px solid #00000020;
+}
+/*Search*/
+#taskbarSearch {
+        bottom: 5px;
+        right: 5px;
+        height: 80%;
+        background-color: white;
+        outline: transparent;
+        border: 2px solid rgba(0, 0, 0, 0.200);
+        border-radius: 8px;
+        position: relative;
+}
+.tsksrcico {
+    background: url(../../img/icons/search.png) no-repeat scroll 3% 49%;
+    background-size: 20px;
+    padding-left:30px;
+}
 
 
 
 /*Window settings*/
-.window1 .wincontent {	width: 345px; height: 630px;	}
-.window1 > .wincontent {
+.window2 .wincontent {	width: 345px; height: 630px;	}
+.window2 > .wincontent {
     min-width: 345px;
     min-height: 630px;
     max-width: 345px;

@@ -16,9 +16,13 @@
     <body onload="startServices();">
         <desktop>
 
-            <!--<window data-title="Calculator" data-html="true" appicon="<img src='system/img/icons/placeholder.png'  width='28' height='28'>">
+            <window data-title="Draw!" data-html="true" appicon="<img src='system/img/icons/paint.png'  width='28' height='28'>">
+                <iframe src="apps/draw/index.html"></iframe>         
+                </window>
+
+            <window data-title="Calculator" data-html="true" appicon="<img src='system/img/icons/calculator.png'  width='28' height='28'>">
             <iframe src="apps/calculator/index.html"></iframe>         
-            </window>-->
+            </window>
 
  
 
@@ -28,16 +32,8 @@
             <div id="appsmenu">
                 <div class="applist">
 					<center>                    
-					<li onclick="openWindow(1)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Placeholder</a></li>
-                   <!--<li onclick="openWindow(2)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Notepad</a></li>
-                    <li onclick="openWindow(3)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Calendar</a></li>
-                    <li onclick="openWindow(4)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Calculator</a></li>
-                    <li onclick="openWindow(5)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Minesweeper</a></li>
-                    <li onclick="openWindow(6)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>VMBox</a></li>
-                    <li onclick="openWindow(7)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Bronze</a></li>
-					<li onclick="openWindow(9)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Terminal</a></li>
-					<li onclick="openWindow(10)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Media Player</a></li>
-					<li onclick="openWindow(11)"><a><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br>Release Notes</a></li>-->
+					<li onclick="openWindow(1)"><a><img border="0" alt="" src="system/img/icons/paint.png" width="32" height="32"><br>Draw!</a></li>
+                    <li onclick="openWindow(2)"><a><img border="0" alt="" src="system/img/icons/calculator.png" width="32" height="32"><br>Calculator</a></li>
                     </center>
 				</div>
 				<div class="quickweanews">
@@ -48,7 +44,6 @@
                                 <script src="https://rss.bloople.net/?url=https%3A%2F%2Fwww.theverge.com%2Frss%2Findex.xml&showtitle=false&type=js"></script>
                                </div>
                         </div>
-                        <hr class="qwnhr">
                         <div class="weatherSection">
                             <div class="weather"></div>
                             <div class="owmlink">Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></div>
@@ -61,17 +56,28 @@
 				</div>
                 <div id="userProfile">
                     <hr>
-                    <div><img border="0" class="pfpimage" alt="" src="system/img/icons/placeholder.png" width="32" height="32"><br><a class="userProfileTxt">User</a></div>
+                    <div><img border="0" class="pfpimage" alt="" src="system/img/pfp.png" width="32" height="32"><br><a class="userProfileTxt">User</a></div>
                     <a id="settingsUP" onclick="openWindow(8)"><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"></a>
                 </div>
             </div>
 
             <taskbar>
             <taskbarapp onclick="appstoggle();" id="skybutton"><img src='system/img/icons/skyos.png'  width='22' height='28'></taskbarapp>
+            <input type="text" id="taskbarSearch" class="tsksrcico" placeholder="Click here to search" onkeyup="taskSearch()">
             <div class="timendate"></div>
             </taskbar>
 
             <watermark></watermark>
+
+            <div id="contextMenu" class="context-menu" style="display: none; left: 140px; top: 421px;">
+                <ul>
+                    <li onclick="window.location.reload(true);">Reload skyOS</li>
+                    <li onclick="activatefull(document.documentElement);">Activate Fullscreen</li>
+                    <li onclick="deactivatefull();">Deactivate Fullscreen</li>
+                    
+        
+                </ul>
+                </div>
         </desktop>
     </body>
 </html>

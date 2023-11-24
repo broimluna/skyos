@@ -42,7 +42,7 @@ function weatherService() {
     var apiicon = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"	
 
 	weather.html(
-		'<a><img src='+apiicon+' style="vertical-align: middle;" width="46" height="46"></img></a>' + Math.round(data.main.temp) + '°C, ' + data.weather[0].main + "<br> Currently feels like " + Math.round(data.main.feels_like) + "°C, with " + data.weather[0].description + ".<br> The wind's speed is " + Math.round(data.wind.speed) + "km/h." 
+		'<a><div class="weathermain"><img src='+apiicon+' style="vertical-align: middle;" width="46" height="46"></img></a>' + Math.round(data.main.temp) + '°C, ' + data.weather[0].main + "</div><br> Currently feels like " + Math.round(data.main.feels_like) + "°C, with " + data.weather[0].description + ".<br> The wind's speed is " + Math.round(data.wind.speed) + "km/h." 
 	)
 	})
 	}
@@ -58,5 +58,26 @@ function weatherService() {
 		navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
 	}
 	setTimeout(weatherService, 5000);
+
+}
+
+//Taskbar Search Box
+function taskSearch() {
+	var input, filter, ul, li, a, i, txtValue;
+	input = document.getElementById("taskbarSearch");
+	filter = input.value.toUpperCase();
+	ul = document.getElementsByClassName("applist")[0];
+	li = ul.getElementsByTagName("li");
+	for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			txtValue = a.textContent || a.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+			} else {
+					li[i].style.display = "none";
+			}
+	}
+	document.getElementById("appsmenu").classList.add("opened");
+	document.getElementById("skybutton").classList.add("active");
 
 }
