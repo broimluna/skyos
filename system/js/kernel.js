@@ -4,14 +4,14 @@ var windowid = 1
 var developer_name = "Luna"
 var product_name = "skyOS";
 var kernel_version = "1.0";
-var build_number = "700.120";
+var build_number = "700.200";
 document.title = product_name;
 
 $(document).ready(function(){
 //Watermark Stamp
 let nLastModif = document.lastModified;
 var watermark = document.getElementsByTagName("watermark")[0];
-watermark.innerText = developer_name + "'s " + product_name + "\n Version " + kernel_version + "." + build_number + "\nCompiled on " + nLastModif;
+watermark.innerText = developer_name + "'s " + product_name + "\n Version " + kernel_version + "." + build_number + "\nCompiled on " + nLastModif + "\nThis is a preview build, and may contain bugs.";
 });
 
 $(document).ready(function(){

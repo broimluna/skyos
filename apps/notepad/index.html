@@ -1,0 +1,12 @@
+<link href="css/layout.css" rel="stylesheet" type="text/css">
+		        <link href="css/notestyle.css" rel="stylesheet" type="text/css">
+                <link href="../../system/css/themes/default.css" rel="stylesheet" type="text/css">
+		        <script src="js/FileSaver.js"></script>
+		        <script src="js/notepad.js"></script>
+				<div id="app">
+				<div class="menus" touch-action="none"><div class="menu-container"><input name="notefilename" placeholder="Enter a filename." type="text" maxlength="512" id="notefilename" class="textinput"/><button onclick="downloadNote();">Save</button></div></div>
+				<div id="document" class="inset-shallow">
+						<textarea id="document-textarea"></textarea>
+					</div>
+				</div>
+				<div id="print-helper"></div>

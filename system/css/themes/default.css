@@ -3,13 +3,14 @@
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
-    scrollbar-width: auto;
+    scrollbar-width: 6px !important;
     scrollbar-color: #4a4a4a #ffffff;
   }
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
   }
 
   *::-webkit-scrollbar-track {
@@ -47,13 +48,13 @@ taskbar {
 }
 
 taskbarapp {
-    background-color: transparent !important;
+    background-color: transparent;
     padding: 12.7px 5px 5px 5px;
     transition: 0.2s;
     right: 5px;
 }
 taskbarapp.active {
-    background: rgba(0, 0, 0, 0.25) !important;
+    background: rgba(0, 0, 0, 0.25);
     border-radius: 0px;
 }
 taskbarapp > img {
@@ -77,6 +78,9 @@ taskbarapp.active::before {
     background-color: white;
     transition: 0.2s;
 }
+taskbarapp:hover {
+    background: rgba(0, 0, 0, 0.25) !important;
+}
 windowheader {
    border-bottom: 0px solid black;
 }
@@ -89,7 +93,7 @@ windowheader > strong {
     left: 0 !important
 }
 #skybutton.active {
-    background: rgba(0, 0, 0, 0.25) !important;
+    background: rgba(0, 0, 0, 0.25);
     transition: 0.2s;
 }
 #skybutton.active::before {
@@ -109,6 +113,9 @@ windowheader > strong {
     transition: 0.2s;
     top: 4px;
 }
+#skybutton:hover {
+    background: rgba(0, 0, 0, 0.25) !important;
+}
 #skybutton.active > img {
     transition: 0.2s;
     top: 2px;
@@ -120,11 +127,22 @@ iframe {
 }
 .timendate {
     position: absolute;
-    top: 22%;
+    top: 11%;
     right: 0.3%;
+    padding: 4px 4px 4px 4px;
+    transition: 0.2s;
+    cursor: default;
+}
+.timendate:hover {
+   background: rgba(255, 255, 255, 0.25);
+   border-radius: 8px;
+}
+.timendate.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
 }
 watermark {
-    color: white;
+    color: #ffffff8a;
 }
 .fullSizeWindow > .wincontent {
     height: 97.5% !important;
@@ -136,7 +154,7 @@ watermark {
     bottom: 36px;
     left: 0;
     right: 0;
-    width: 525px;
+    width: 540px;
     height: 0;
     border-top-right-radius: 8px;
     border: 2px solid transparent;
@@ -200,7 +218,7 @@ watermark {
 	left: 0;
 	width: 35.8%;
     height: 14%;
-	border-top: 2px solid black;
+    border-top: 2px solid rgba(0, 0, 0, 0.350);
 }
 
 #userProfile div {
@@ -250,7 +268,7 @@ watermark {
     color: black;
     font-family: Segoe UI !important;
     height: 320px;
-    border-left: 2px solid black;
+    border-left: 2px solid rgba(0, 0, 0, 0.350);
     position: absolute;
     width: 64%;
     right: 0;
@@ -290,7 +308,7 @@ watermark {
 .newsSection, .weatherSection {
     width: 100%;
     height: 137px;
-    border-top: 2px solid rgba(0, 0, 0, 0.250);
+    border-top: 2px solid rgba(0, 0, 0, 0.350);
 }
                       
                       
@@ -303,7 +321,7 @@ watermark {
                         }
 
                         .weather {
-                            top: 0;
+                            top: 2px;
                             left: 2px;
                             white-space: nowrap;
                             position: relative;
@@ -372,11 +390,63 @@ watermark {
     padding-left:30px;
 }
 
-
+/*Time and Date flyout*/
+#timendateflyout {
+    position: absolute;
+    bottom: 36px;
+    right: 0;
+    width: 424px;
+    height: 0px;
+    border-top-left-radius: 8px;
+    border: 2px solid transparent;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.250);
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+    opacity: 0;
+}
+#timendateflyout.opened {
+    height: 465px;
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    visibility: visible;
+    opacity: 1;
+}
 
 /*Window settings*/
-.window2 .wincontent {	width: 345px; height: 630px;	}
+window {
+    top: 32px;
+    left: 32px;
+}
+.window1 .wincontent {
+    height: 680px;
+    width: 610px;
+}
+.window1 > .wincontent {
+    min-height: 680px;
+    min-width: 610px;
+}
+.window2 .wincontent {
+    width: 455px;
+    height: 360px;
+}
 .window2 > .wincontent {
+    min-width: 455px;
+    min-height: 360px;
+}
+.window3 .wincontent {
+    width: 420px;
+    height: 465px;
+}
+.window3 > .wincontent {
+    min-width: 420px;
+    min-height: 465px;
+}
+.window4 .wincontent {	
+    width: 345px; 
+    height: 630px;	
+}
+
+.window4 > .wincontent {
     min-width: 345px;
     min-height: 630px;
     max-width: 345px;

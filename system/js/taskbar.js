@@ -2,6 +2,10 @@ function appstoggle() {
 	document.getElementById("appsmenu").classList.toggle("opened");
 	document.getElementById("skybutton").classList.toggle("active");
 }
+function timendateflyouttoggle() {
+	document.getElementById("timendateflyout").classList.toggle("opened");
+	document.getElementsByClassName("timendate")[0].classList.toggle("active");
+}
 
 function timeService() {
 	//Initialize Date
@@ -29,7 +33,9 @@ function weatherService() {
 	var api = 'https://api.openweathermap.org/data/2.5/weather' // OpenWeather API url
 	var apikey = "24a64a2d24697b4b292500aaa627a25e";
 	//Default message 
-
+	weather.html(
+		'<a><div class="weathermain"><img src="system/img/icons/skyos.png" style="vertical-align: middle;margin-right:5px;" width="32" height="40"></img>Fetching the current weather...</a></div>'
+	)
 
 
 //If geolocalisation is enabled, do this
@@ -50,8 +56,8 @@ function weatherService() {
 //If geolocalisation is disabled, do this
 	function errorFunction() {
 		weather.html(
-			'<a><img src="system/img/icons/widgets.png" style="vertical-align: middle;" width="46" height="46"></img></a>' + "Could not fetch weather"
-		)
+			'<a><div class="weathermain"><img src="system/img/icons/skyos.png" style="vertical-align: middle;margin-right:5px;" width="32" height="40"></img>Could not fetch the weather<a></div>'
+			)
 	}
 
 	if (navigator.geolocation) {

@@ -20,9 +20,19 @@
                 <iframe src="apps/draw/index.html"></iframe>         
                 </window>
 
+                
+            <window data-title="Notepad" data-html="true" appicon="<img src='system/img/icons/placeholder.png'  width='28' height='28'>">
+                <iframe src="apps/notepad/index.html"></iframe>         
+                </window>
+
+                <window data-title="Calendar" data-html="true" appicon="<img src='system/img/icons/calendar.png'  width='28' height='28'>">
+                    <iframe src="apps/calendar/index.html"></iframe>         
+                    </window>
+
             <window data-title="Calculator" data-html="true" appicon="<img src='system/img/icons/calculator.png'  width='28' height='28'>">
             <iframe src="apps/calculator/index.html"></iframe>         
             </window>
+
 
  
 
@@ -33,7 +43,9 @@
                 <div class="applist">
 					<center>                    
 					<li onclick="openWindow(1)"><a><img border="0" alt="" src="system/img/icons/paint.png" width="32" height="32"><br>Draw!</a></li>
-                    <li onclick="openWindow(2)"><a><img border="0" alt="" src="system/img/icons/calculator.png" width="32" height="32"><br>Calculator</a></li>
+					<li onclick="openWindow(2)"><a><img border="0" alt="" src="system/img/icons/notepad.png" width="32" height="32"><br>Notepad</a></li>
+                    <li onclick="openWindow(3)"><a><img border="0" alt="" src="system/img/icons/calendar.png" width="32" height="32"><br>Calendar</a></li>
+                    <li onclick="openWindow(4)"><a><img border="0" alt="" src="system/img/icons/calculator.png" width="32" height="32"><br>Calculator</a></li>
                     </center>
 				</div>
 				<div class="quickweanews">
@@ -57,14 +69,17 @@
                 <div id="userProfile">
                     <hr>
                     <div><img border="0" class="pfpimage" alt="" src="system/img/pfp.png" width="32" height="32"><br><a class="userProfileTxt">User</a></div>
-                    <a id="settingsUP" onclick="openWindow(8)"><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"></a>
+                    <!--<a id="settingsUP" onclick="openWindow(8)"><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"></a>-->
                 </div>
             </div>
+            <div id="timendateflyout">
+                <iframe src="apps/calendar/flyout.html"></iframe>         
+				</div>
 
             <taskbar>
             <taskbarapp onclick="appstoggle();" id="skybutton"><img src='system/img/icons/skyos.png'  width='22' height='28'></taskbarapp>
             <input type="text" id="taskbarSearch" class="tsksrcico" placeholder="Click here to search" onkeyup="taskSearch()">
-            <div class="timendate"></div>
+            <div class="timendate" onclick="timendateflyouttoggle()"></div>
             </taskbar>
 
             <watermark></watermark>
