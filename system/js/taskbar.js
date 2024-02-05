@@ -6,6 +6,11 @@ function timendateflyouttoggle() {
 	document.getElementById("timendateflyout").classList.toggle("opened");
 	document.getElementsByClassName("timendate")[0].classList.toggle("active");
 }
+function aitoggle() {
+	document.getElementById("coralaiflyout").classList.toggle("opened");
+	document.getElementById("aibutton").classList.toggle("active");
+
+}
 
 function timeService() {
 	//Initialize Date

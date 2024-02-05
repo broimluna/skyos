@@ -1,0 +1,80 @@
+body {
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@font-face {
+  font-family: Segoe UI;
+  src: url(../../system/fonts/segoeuisl.ttf);
+  font-weight: bolder;
+}
+
+h1 {
+  color: white;
+
+}
+a {
+  color: white;
+  text-align: center;
+}
+h2 {
+  color: white;
+font-size: 80px;
+}
+
+p {
+  color: white;
+
+}
+
+#vmflex {
+  display: flex;
+}
+#vmflex a {
+  margin: 0px 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+#vmflex a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+#vmflex img {
+  margin: 2px 5px; 
+}
+
+.vmlist {
+  left: 4px;
+  height: 99%;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+.vmlist a {
+  display: inline-table;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 8px 8px;
+  font-family: 'Segoe UI';
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.vmlist a:hover {
+  -moz-border-radius:3px; 
+  -webkit-border-radius:3px;
+  border: 2px solid rgba(0, 0, 0, 0.200);
+  transition: 0.1s;
+  background: rgba(0, 0, 0, 0.5);
+border-radius: 5px;
+}
+
+.disabled {
+  display: none !important;
+}
+
+
+

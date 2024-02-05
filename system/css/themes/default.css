@@ -8,19 +8,24 @@
   }
 
   /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  ::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: transparent;
   }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
+  ::-webkit-scrollbar
+  {
+      width: 6px;
+      height: 6px;
+      background-color: transparent;
   }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #4a4a4a;
-    border-radius: 8px;
-    border: 4px solid transparent;
+  
+  ::-webkit-scrollbar-thumb
+  {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
   }
 
 @font-face {
@@ -120,6 +125,23 @@ windowheader > strong {
     transition: 0.2s;
     top: 2px;
 }
+#aibutton.active::before {
+    border-radius: 3px;
+    content: "";
+    display: block;
+    height: 3px;
+    bottom: 1px;
+    left: 0;
+    margin: 0 9px;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    transition: 0.2s;
+}
+#aibutton.active > img {
+    transition: 0.2s;
+    top: 2px;
+}
 
 iframe {
     width: 100%;
@@ -165,6 +187,27 @@ watermark {
     opacity: 0;
 }
 #appsmenu.opened {
+    height: 320px;
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    visibility: visible;
+    opacity: 1;
+}
+#coralaiflyout {
+    position: absolute;
+    bottom: 36px;
+    left: 50px;
+    right: 0;
+    width: 300px;
+    height: 0;
+    border-top-right-radius: 8px;
+    border: 2px solid transparent;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.250);
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+    opacity: 0;
+}
+#coralaiflyout.opened {
     height: 320px;
     border: 2px solid rgba(0, 0, 0, 0.200);
     visibility: visible;
@@ -452,3 +495,22 @@ window {
     max-width: 345px;
     max-height: 630px;
 }
+.window5 > .wincontent {
+    width: 555px;
+    height: 465px;
+    min-width: 555px;
+    min-height: 465px;
+}
+.window6 > .wincontent {
+    width: 298px;
+    height: 368px;
+    min-width: 298px;
+    min-height: 368px;
+}
+.window7 .wincontent {	
+    width: 445px; 
+    height: 230px;	
+    min-width: 445px; 
+    min-height: 230px;	
+}
+

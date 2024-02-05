@@ -23,3 +23,10 @@ and a finalized design, wallpaper will change before release.
 Search should be fully functional, with the weather and news section
 <br>
 in the Apps menu being finalized.
+<br>
+<br>
+skyOS build 1.0.700.650 is a preview build containing 3 new apps,
+<br>
+and the introduction of Coral AI. Coral AI is powered by Cohere's AI models,
+<br>
+and can even search the web! Design has been finalized for a release very soon.

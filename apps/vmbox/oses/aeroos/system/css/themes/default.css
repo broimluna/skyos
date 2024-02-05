@@ -1,0 +1,426 @@
+a, p, h1, h2, h3, li, div, input, strong, button, textarea, .menus {
+    color: white;
+    font-family: Segoe UI !important;
+}
+
+button, input {
+    border-radius: 5px;
+    background: url("../../img/glass.png");
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(0, 0, 0, 0.200);
+}
+
+::placeholder {
+    color: white;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: transparent;
+}
+::-webkit-scrollbar
+{
+	width: 6px;
+    height: 6px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+@font-face {
+    font-family: Segoe UI;
+    src: url(../../fonts/segoeuisl.ttf);
+}
+
+#startuplogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 200px;
+    position: relative;
+  }
+  #startupload {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 400px;
+    position: relative;
+  }
+
+  #startup {
+    position: fixed;
+    display: block; 
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(0.00001px);
+}
+#desktop {
+    background: url("../../img/bg.png");
+    background-size: cover !important;
+}
+#taskbar {
+    backdrop-filter: blur(5px);
+    background: url(../../img/glass.png);
+    background-size: cover !important;    
+    height: 40px;
+    z-index: 1010;
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    border-bottom: 0px solid transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 0 auto;
+}
+.windowHeader {
+    background: transparent;
+    border-bottom: 2px solid transparent;
+}
+.activeWindow .windowHeader {
+    background-color: transparent;
+}
+.windowHeader > strong {
+    display: inline-flex;
+}
+.windowHeader > span {
+    border: 2px solid transparent;
+    bottom: 2px;
+    left: 3px;
+    color: black;
+}
+.windowHeader > span.winclose:hover {
+	background: rgba(255,255,255,0.3);
+    
+}
+.winheadimg {
+    margin: 1px 3px;
+}
+.wincontent {
+    border: 2px solid transparent;
+    padding: 0;
+    backdrop-filter: blur(0.00001px);
+}
+.window {
+    backdrop-filter: blur(5px);
+    background-image: url(../../img/glass.png);
+    background-color: transparent;
+    background-size: cover;
+    
+}
+
+.window.fullSizeWindow {
+    border: 2px solid transparent;
+    bottom: 0px !important;
+    backdrop-filter: blur(5px);
+}
+.fullSizeWindow {
+    display: block;
+    height: 100% !important;
+    width: 100% !important;
+}
+.taskbarPanel {
+    display: inline-flex;
+    border: 2px solid transparent;
+    background: transparent;
+    font-size: 17px;
+    padding: 2px 3px;
+    margin: 0px 0 0 0px;
+    line-height: 16px;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+.taskbarPanel.activeTab {
+    background: rgba(0, 0, 0, 0.300);
+    transform: scale(1);
+}
+.taskbarPanel.minimizedTab {
+    background: transparent;
+}
+.taskbarPanel:hover, .taskbarPanel.minimizedTab:hover {
+    background: rgba(0, 0, 0, 0.150);
+    transition: 0.5s;
+    border-radius: 4px;
+}
+#appsBtn {
+    display: inline-block;
+    border: transparent;
+    position: relative;
+    font-size: 15px;
+    padding: 0px 5px;
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.12);
+    height: 0px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+#appsBtn img {
+    transition: 0.5s;
+    margin:0px 0px;
+}
+#appsBtn img:hover {
+background: rgba(0, 0, 0, 0.5);
+transition: 0.5s;
+border-radius: 4px;
+}
+
+.timedatetext {
+    position: relative;
+    top: calc(0% + 4px);
+    color: white;
+    font-family: Segoe UI;
+    text-align: right;
+    font-size: 15px;
+    transition: 0.2s;
+}
+.timedate {
+    background: transparent !important;
+    padding: 8px 0.1% 9px 2px !important;
+    position: absolute;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    top: -2px;
+    border-radius: 4px;
+    border-bottom-right-radius: 0px;
+    height: calc(0% + 21px);
+    /* width: calc(0% + 134px) !important; */
+    right: 0;
+    outline: none !important;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+.timedate.dark {
+    filter: invert(1);
+}
+#appsmenu {
+    position: fixed;
+    width: 260px;
+    height: 0px;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    bottom: 40px;
+    z-index: 2000;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 2px solid transparent;
+    transition: 0.5s;
+    background: url(../../img/glass.png);
+    background-size: auto;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-top-right-radius: 16px;
+}
+
+#appsmenu.dark {
+    background: #2929299f;
+}
+
+#appsmenu.opened {
+    height: 390px; 
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    opacity: 1;
+}
+
+#appicons, #tasksicons {
+	background:transparent;
+	border:solid 1px transparent;
+	margin: 7px 0 7px 7px;
+	height: 69%;
+	overflow-y: scroll;
+	float:left;
+	display:block;
+	padding:0;
+	list-style:none;
+	transition: 0.2s;
+}
+#appicons a, #tasksicons a {
+    border: solid 1px transparent;
+    display: block; 
+    padding:3px; 
+    margin:3px;
+    text-decoration: none; 
+    min-width:220px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+#appicons.dark {
+    color: white !important;
+}
+#appicons a:hover, #tasksicons a:hover {
+	-moz-border-radius:3px; 
+    -webkit-border-radius:3px;
+    background: #ffffff7a;
+    border: 1px solid white;
+    transition: 0.1s;
+}
+#appicons a.dark:hover {
+    background: #0000007a;
+    border: 1px solid black;
+}
+#appicons a img, #tasksicons a img {
+    border:0; 
+    vertical-align:middle; 
+    margin:0 5px 0 0;
+}
+#appicons a br, #tasksicons a br {
+    display: none;
+}
+.appsHtxt {
+    font-family: Segoe UI;
+    text-align: center;
+    margin: 12px 0px;
+}
+#appSearch {
+    background: transparent;
+    padding: 6% 12%;
+    margin: 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 85%;
+    line-height: 14px;
+    overflow-x: scroll;
+    left: 0;
+    border-radius: 0px;
+    border-color: transparent;
+    outline: none;
+    /* padding: 9px 4px 9px 4px; */
+    background-image: url("../../img/icons/tbSearchW.png");
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: white;
+}
+
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.2s;
+}
+.context-menu.dark {
+    background: #29292960;
+}
+
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 150px;
+    list-style: none;
+}
+
+.context-menu ul li {
+    border-radius: 16px;
+    background: transparent;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    border: 1px solid transparent;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.context-menu ul li.dark {
+    color: white;
+}
+
+
+.context-menu ul li:hover {
+    background: #00000024;
+    border: 1px solid white;
+}
+
+
+#watermark {
+    position: absolute;
+    display: none;
+    bottom: 50px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+
+/*window app sizes*/
+.window {	top: 20px;	left: 240px;}
+
+#window0 .wincontent {	width: 660px; height: 400px;	}
+#window1 .wincontent {	width: 500px; height: 300px;	}
+#window2 .wincontent {	width: 426px; height: 514px;	}
+#window3 .wincontent {	width: 308px; height: 252px;	}
+#window4 .wincontent {	width: 830px; height: 635px;	}
+#window5 .wincontent {	width: 286px; height: 356px;	}
+
+
+#window4 > .wincontent iframe {
+    height: calc(100% - 20px);
+    border-radius: 5px;
+}
+#window0 > .wincontent {
+    min-width: 660px;
+    min-height: 400px;
+}
+#window1 > .wincontent {
+    min-width: 500px;
+    min-height: 300px;
+}
+#window2 > .wincontent {
+    min-width: 426px;
+    min-height: 514px;
+}
+#window3 > .wincontent {
+    min-width: 308px;
+    min-height: 252px;
+}
+#window4 > .wincontent {
+    min-width: 830px;
+    min-height: 635px;
+}
+#window5 > .wincontent {
+    min-width: 286px;
+    min-height: 356px;
+}
+#window6 .wincontent {
+    min-width: 464px;
+    min-height: 280px;
+    max-width: 464px;
+    max-height: 280px;
+
+}
+#window6.fullSizeWindow .wincontent {
+    min-width: unset !important;
+    min-height: unset !important;
+    max-width: unset !important;
+    max-height: unset !important;  
+
+}
+#window7 > .wincontent {
+    min-width: 286px;
+    min-height: 356px;
+}
+
+
+
