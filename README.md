@@ -30,3 +30,8 @@ skyOS build 1.0.700.650 is a preview build containing 3 new apps,
 and the introduction of Coral AI. Coral AI is powered by Cohere's AI models,
 <br>
 and can even search the web! Design has been finalized for a release very soon.
+<br>
+<br>
+skyOS build 1.0.700.rc is the release candidate build of skyOS.
+<br>
+Mostly fixes and added startup animation.

@@ -2,6 +2,9 @@ function startServices() {
     timeService();
     weatherService();
 }
+window.addEventListener('load', function () {
+	$("#startup").fadeOut();
+})
 //Right click menu
 document.oncontextmenu = rightClick;
   
