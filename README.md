@@ -35,3 +35,8 @@ and can even search the web! Design has been finalized for a release very soon.
 skyOS build 1.0.700.rc is the release candidate build of skyOS.
 <br>
 Mostly fixes and added startup animation.
+<br>
+<br>
+skyOS build 1.0.700 is the release build of skyOS.
+<br>
+Coral AI was disabled due to issues, it will return in a future build.
