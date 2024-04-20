@@ -29,14 +29,17 @@
   font-family: skyOS Font;
   src: url(../../fonts/lfl.ttf);
 }
-a, h1, h2, h3, p, div, strong, taskbarapp, span, watermark {
+a, h1, h2, h3, p, div, strong, taskbarapp, span, watermark, button {
   font-family: skyOS Font;
 }
-
+hr {
+  border-color: black;
+}
 desktop {
   background: url("../../img/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  transition: 0.2s;
 }
 window {
   background-color: rgba(173, 216, 230, 0.500);
@@ -85,9 +88,19 @@ taskbarapp:hover {
 }
 windowheader {
  border-bottom: 0px solid black;
+ border-radius: 3px;
 }
 windowheader > strong {
-  margin: 0 0 0 4px
+  margin: 0 0 0 4px;
+  top: -6px;
+  margin-left: 3px;
+  position: relative;
+}
+windowheader > strong > img {
+  height: 22px;
+  width: 22px;
+  top: 7px;
+  position: relative;
 }
 #startuplogo {
   display: block;
@@ -223,11 +236,12 @@ watermark {
 #coralaiflyout {
   position: absolute;
   bottom: 36px;
-  left: 50px;
+  left: 35px;
   right: 0;
   width: 300px;
   height: 0;
   border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
   border: 2px solid transparent;
   visibility: hidden;
   background-color: rgba(255, 255, 255, 0.250);
@@ -324,6 +338,8 @@ watermark {
   right: 0;
   top: 6px;
   position: absolute;
+  background: transparent !important;
+  cursor: pointer;
 }
 #quickweanews hr, #timedateflyout hr {
   margin: 6px 0px;
@@ -540,5 +556,14 @@ window {
   height: 230px;	
   min-width: 445px; 
   min-height: 230px;	
+}
+.window7 > windowheader > strong > img {
+  top: 4px !important;
+}
+.window8 > .wincontent {
+  width: 382px;
+  height: 390px;
+  min-width: 382px; 
+  min-height: 390px;
 }
 

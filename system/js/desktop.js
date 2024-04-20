@@ -1,6 +1,8 @@
 function startServices() {
     timeService();
-    weatherService();
+	weatherService();
+	startCookies();
+	openWindow(8);
 }
 window.addEventListener('load', function () {
 	$("#startup").fadeOut();

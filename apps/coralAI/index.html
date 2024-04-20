@@ -26,7 +26,10 @@
   const chatContainer = document.getElementById("chat-container");
 
   // OpenAI API key (replace 'YOUR_API_KEY' with your actual API key)
-  const apiKey = "";
+  var api = "ZFRsRFNXaDBRVzB5TlZOSlFWUlRja1J4ZUdzMFIyMXpXazExWWtGVFYyOHpXRVpRWmpoc2VRPT0="
+  var apbe = atob(api);
+  var apbe2 = atob(apbe);
+  const apiKey = apbe2;
 
   // Create conversation history
   let conversation = [];

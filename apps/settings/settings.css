@@ -1,0 +1,35 @@
+
+.setab {
+  position: fixed;
+  right: 0;
+  left: 112px;
+  border-left: 2px solid black;
+  padding: 10px;
+  top: 26px;
+  height: 89%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.setab > button, #tabsettings > button, .sbranding > button {
+    top: 5px;
+    position: relative;
+    background: rgba(173, 216, 230, 0.500);
+    border: 2px solid rgba(0, 0, 0, 0.200);
+    border-radius: 8px;
+}
+.setab > button:hover, #tabsettings > button:hover, .sbranding > button:hover {
+  cursor: pointer;
+}
+
+#tabsettings {
+    padding: 10px 2px;
+    width: 0%;
+    height: 10%;
+}
+#tabsettings > button {
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+  .sbranding {
+    text-align: center;
+  }

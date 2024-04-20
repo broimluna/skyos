@@ -10,6 +10,7 @@
         <script src="system/js/kernel.js" type="text/javascript"></script>
         <script src="system/js/desktop.js" type="text/javascript"></script>
         <script src="system/js/taskbar.js" type="text/javascript"></script>
+        <script src="system/js/cookies.js" type="text/javascript"></script>
 
     </head>
 
@@ -48,6 +49,53 @@
                         <div id="jsterminal">
                         </div>                        
                     </window>
+
+                    <window data-title="Settings" data-html="true" appicon="<img src='system/img/icons/settings.png'  width='28' height='28'>">
+                        <script src="apps/settings/settings.js"></script>
+                        <link rel="stylesheet" type="text/css" href="apps/settings/settings.css" />
+                        <div id="tabsettings">
+                            <button class="settingsbutton" data-title="Customization" onclick="opensTab('Customization')">Customization</button>
+                            <!--<button class="settingsbutton" data-title="User Profile" onclick="opensTab('UserProfile')">User Profile</button>-->
+                            <button class="settingsbutton" data-title="About" onclick="opensTab('About')">About</button>
+                        </div>
+                        <div id="Customization" class="setab">
+                         <h2>Wallpaper</h2>  
+                         <input id="inputbtn" class="wppicker" type="file" accept="image/*" onchange="changeBG(event)">
+                         <br>
+                         <br>
+                         <button onclick="resetBG();">Reset BG</button>   
+                         <hr>
+                         <h2>Colors</h2>
+                         <input id="setcolorpicker" type="color" value="#ff0000" onchange="colorpicker();">Select your color</input>
+                         <br>
+                         <br>
+                         <button onclick="resetColors();">Reset Colors</button>   
+                        </div>
+                        <div id="UserProfile" class="setab" style="display: none;">
+                              <h1>Coming soon</h1>
+                           </div>
+                           <div id="About" class="setab" style="display: none;">
+                            <div class="sbranding">
+                                <img src="system/img/icons/skyos.png" height="84" width="72"></img>
+                                <h2>skyOS</h2>
+                                <hr>
+                                <a class="abtver"></a>
+                                <br>
+                                <br>
+                                <a>Based on coreOS's "NF" kernel.</a>
+                                <br>
+                                <br>
+                                <a>broimluna - 2024</a>
+                                <hr>
+                                <h3>Reset skyOS</h3>
+                                <a>Clicking the button below will reset skyOS.</a>
+                                <br>
+                                <a><b>All of your settings will be deleted.</b></a>
+                                <br>
+                                <button class="resetCookies" onclick="resetCookies();"><b>Reset skyOS</b></button>
+                            </div>
+                         </div>
+                        </window>
 
                     
 
@@ -90,7 +138,7 @@
                 <div id="userProfile">
                     <hr>
                     <div><img border="0" class="pfpimage" alt="" src="system/img/pfp.png" width="32" height="32"><br><a class="userProfileTxt">User</a></div>
-                    <!--<a id="settingsUP" onclick="openWindow(8)"><img border="0" alt="" src="system/img/icons/placeholder.png" width="32" height="32"></a>-->
+                    <a id="settingsUP" onclick="openWindow(8)"><img border="0" alt="" src="system/img/icons/settings.png" width="32" height="32"></a>
                 </div>
             </div>
             <div id="timendateflyout">
@@ -103,7 +151,7 @@
 
             <taskbar>
             <taskbarapp onclick="appstoggle();" id="skybutton"><img src='system/img/icons/skyos.png'  width='22' height='28'></taskbarapp>
-            <taskbarapp onclick="aitoggle();" id="aibutton" style="display: none;"><img src='system/img/icons/ai.png'  width='28' height='28'></taskbarapp>
+            <taskbarapp onclick="aitoggle();" id="aibutton" style="display: inline;"><img src='system/img/icons/ai.png'  width='28' height='28'></taskbarapp>
             <input type="text" id="taskbarSearch" class="tsksrcico" placeholder="Click here to search" onkeyup="taskSearch()">
             <div class="timendate" onclick="timendateflyouttoggle()"></div>
             </taskbar>
@@ -113,6 +161,7 @@
             <div id="contextMenu" class="context-menu" style="display: none; left: 140px; top: 421px;">
                 <ul>
                     <li onclick="window.location.reload(true);">Reload skyOS</li>
+                    <li onclick="openWindow(8);">Open Settings</li>
                     <li onclick="activatefull(document.documentElement);">Activate Fullscreen</li>
                     <li onclick="deactivatefull();">Deactivate Fullscreen</li>
                     
