@@ -46,6 +46,10 @@ window {
   backdrop-filter: blur(5px);
   border: 2px solid rgba(0, 0, 0, 0.200)
 }
+.wincontent {
+  padding: 0px;
+  overflow: hidden;
+}
 taskbar {
   background-color: rgba(255, 255, 255, 0.250);
   backdrop-filter: blur(5px);
@@ -54,9 +58,11 @@ taskbar {
 
 taskbarapp {
   background-color: transparent;
-  padding: 12.7px 5px 5px 5px;
+  padding: 0px 5px 5px 5px;
   transition: 0.2s;
   right: 5px;
+  position: relative;
+  display: inline-block;
 }
 taskbarapp.active {
   background: rgba(0, 0, 0, 0.25);
@@ -75,7 +81,7 @@ taskbarapp.active::before {
   content: "";
   display: block;
   height: 3px;
-  bottom: 1px;
+  bottom: 3px;
   left: 0;
   margin: 0 12px;
   position: absolute;
@@ -86,21 +92,26 @@ taskbarapp.active::before {
 taskbarapp:hover {
   background: rgba(0, 0, 0, 0.25) !important;
 }
-windowheader {
+.winheader {
  border-bottom: 0px solid black;
  border-radius: 3px;
+ background: transparent;
 }
-windowheader > strong {
+.winheader > strong {
   margin: 0 0 0 4px;
-  top: -6px;
+  top: -8px;
   margin-left: 3px;
   position: relative;
+  color: #000;
 }
-windowheader > strong > img {
+.winheader > strong > img {
   height: 22px;
   width: 22px;
   top: 7px;
   position: relative;
+}
+.winheader.active-header {
+  background-color: transparent;
 }
 #startuplogo {
   display: block;
@@ -136,7 +147,9 @@ windowheader > strong > img {
 #skybutton {
   display: inline !important;
   transition: 0.2s;
-  left: 0 !important
+  left: 0 !important;
+  margin-top: 0px;
+  padding: 12.8px 5px 5px 5px;
 }
 #skybutton.active {
   background: rgba(0, 0, 0, 0.25);
@@ -165,6 +178,9 @@ windowheader > strong > img {
 #skybutton.active > img {
   transition: 0.2s;
   top: 2px;
+}
+#aibutton {
+    padding: 12.8px 5px 5px 5px;
 }
 #aibutton.active::before {
   border-radius: 3px;
@@ -210,6 +226,18 @@ watermark {
 .fullSizeWindow > .wincontent {
   height: 97.5% !important;
   width: 100% !important;
+}
+window.fullSizeWindow {
+  bottom: 36px !important;
+}
+.winclose {
+  top: 2px;
+}
+.winmaximize {
+  top: 6px;
+}
+.winminimize {
+  top: -1px;
 }
 /*Apps menu*/
 #appsmenu {
@@ -311,7 +339,7 @@ watermark {
   text-decoration: transparent;
   border: solid 1px transparent;
   display: inline-flex;
-  padding:3px;
+  padding: 3px 0 0 0;
   line-height: 10.5px;
   margin: 2px;
   text-decoration: none;
@@ -557,7 +585,7 @@ window {
   min-width: 445px; 
   min-height: 230px;	
 }
-.window7 > windowheader > strong > img {
+.window7 > .winheader > strong > img {
   top: 4px !important;
 }
 .window8 > .wincontent {
@@ -566,4 +594,11 @@ window {
   min-width: 382px; 
   min-height: 390px;
 }
+.window9 > .wincontent {
+  width: 300px;
+  height: 300px;
+  min-width: 300px; 
+  min-height: 300px;
+}
+
 

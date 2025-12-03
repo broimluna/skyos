@@ -16,6 +16,10 @@ window {
     border: 2px solid black;
     border-radius: 5px;
     display: none;
+    z-index: 1;
+    min-width: 200px;
+    min-height: 150px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adds depth */
 }
 window.fullSizeWindow {
     top: 0 !important;
@@ -25,71 +29,108 @@ window.fullSizeWindow {
     position: fixed;
     border: 2px solid transparent;
     border-radius: 0px;
+    z-index: 1000;
+    /* FIX: Override inline dimensions set by JS/Resizable to allow stretching */
+    width: auto !important;
+    height: auto !important;
+    overflow: hidden;
 }
 
 window.fullSizeWindow > .wincontent {
-    height: 98%;
+    /* Adjust height to account for header and taskbar */
+    height: calc(100% - 30px) !important; 
     width: 100%;
 }
-windowheader {
+.winheader {
     border-bottom: 2px solid black;
     width: 100%;
-    position: absolute;
+    position: relative;
     cursor: move;
+    background-color: #c3c3c3;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
 }
+
+/* New class for the active window header */
+.winheader.active-header {
+    background-color: #000080; /* Classic active blue */
+    color: white;
+}
+
+/* Ensure buttons inside active header are visible */
+.winheader.active-header .winclose,
+.winheader.active-header .winmaximize,
+.winheader.active-header .winminimize {
+    color: white;
+}
+
 taskbar {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     background-color: #c3c3c3;
     height: 32px;
+    z-index: 1001;
 }
 .winclose {
     right: 4px;
     position: absolute;
+    top: 5px;
 }
 .winmaximize {
-    right: 15px;
+    right: 20px;
     font-size: 10px;
-    top: 5px;
+    top: 10px;
     position: absolute;
 }
 .winminimize {
-    right: 28px;
-    top: -4px;
+    right: 35px;
+    top: 2px;
     position: absolute;
 }
 
 .winclose, .winmaximize, .winminimize {
     cursor: pointer;
+    user-select: none;
 }
-window.opened  {
+window.opened {
     display: block;
 }
 taskbarapp {
     background-color: #818181;
-    line-height: 33px;
-    position: relative;
+    line-height: 22px;
     margin-right: 5px;
-    padding: 8px 5px;
-    display: none;
+    padding: 5px 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
 }
 taskbarapp.active {
-        background-color: #fdffff;
-        display: inline;
-}
-iframe {
- border: 0px solid transparent
-}
-watermark {
-    position: absolute;
-    bottom: 36px;
-    right: 5px;
+    background-color: #fdffff;
     color: black;
 }
+taskbarapp:hover {
+    background-color: #a0a0a0;
+}
+iframe {
+    border: 0px solid transparent;
+    width: 100%;
+    height: 100%;
+}
+watermark {
+    position: fixed;
+    bottom: 40px;
+    right: 5px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    white-space: pre-line;
+    pointer-events: none;
+}
 
-.window1 > .wincontent {
-    min-height: 200px;
-    min-width: 200px;
+.wincontent {
+    padding: 10px;
+    overflow: auto;
+    height: calc(100% - 40px);
 }

@@ -60,7 +60,6 @@
       
         .then((response) => response.json())
         .then((data) => {
-        console.log(data)
           // Get and display ChatGPT's reply
           const reply = data.generations[0].text;
           conversation.push({ role: "assistant", content: reply });
@@ -133,8 +132,14 @@
     border-radius: 8px;
 }
 .container {
-  left: 8px;
-  position: relative;
+  position: sticky;
+    top: 2px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 7px;
+    border: 2px solid rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    border-radius: 8px;
 }
 </style>
         

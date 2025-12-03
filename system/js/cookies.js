@@ -32,6 +32,7 @@ function checkBGCookie() {
     function resetCookies() {
       localStorage.removeItem("skyOSColor");
       localStorage.removeItem("skyOSBG");
+      localStorage.removeItem("skyOS_apps");
       alert("skyOS has been reset.")
       window.location.reload(true);
     }
