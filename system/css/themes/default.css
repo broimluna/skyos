@@ -51,7 +51,7 @@ window {
   overflow: hidden;
 }
 taskbar {
-  background-color: rgba(255, 255, 255, 0.250);
+  background-color: rgba(173, 216, 230, 0.500);
   backdrop-filter: blur(5px);
   height: 36px;
 }
@@ -91,6 +91,13 @@ taskbarapp.active::before {
 }
 taskbarapp:hover {
   background: rgba(0, 0, 0, 0.25) !important;
+}
+taskbarapp.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+taskbarapp.disabled > img {
+  filter: grayscale(80%);
 }
 .winheader {
  border-bottom: 0px solid black;
@@ -239,6 +246,15 @@ window.fullSizeWindow {
 .winminimize {
   top: -1px;
 }
+.winheader.active-header .winclose, .winheader.active-header .winmaximize, .winheader.active-header .winminimize {
+  color: #000000;
+}
+button {
+  position: relative;
+  background: rgba(173, 216, 230, 0.500);
+  border: 2px solid rgba(0, 0, 0, 0.200);
+  border-radius: 8px;
+}
 /*Apps menu*/
 #appsmenu {
   position: absolute;
@@ -250,7 +266,7 @@ window.fullSizeWindow {
   border-top-right-radius: 8px;
   border: 2px solid transparent;
   visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.250);
+  background-color: rgba(173, 216, 230, 0.500);
   backdrop-filter: blur(5px);
   transition: 0.5s;
   opacity: 0;
@@ -260,6 +276,15 @@ window.fullSizeWindow {
   border: 2px solid rgba(0, 0, 0, 0.200);
   visibility: visible;
   opacity: 1;
+}
+#appsmenu.simple {
+  width: 220px;
+}
+#appsmenu.simple > #userProfile {
+  width: 99.8%;
+}
+#appsmenu.simple > .applist {
+  width: 97%;
 }
 #coralaiflyout {
   position: absolute;
@@ -272,7 +297,7 @@ window.fullSizeWindow {
   border-top-left-radius: 8px;
   border: 2px solid transparent;
   visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.250);
+  background-color: rgba(173, 216, 230, 0.500);
   backdrop-filter: blur(5px);
   transition: 0.5s;
   opacity: 0;
@@ -282,6 +307,9 @@ window.fullSizeWindow {
   border: 2px solid rgba(0, 0, 0, 0.200);
   visibility: visible;
   opacity: 1;
+}
+#coralaiflyout::-webkit-scrollbar {
+  display: none;
 }
 .applist {
   background: transparent;
@@ -515,7 +543,7 @@ window.fullSizeWindow {
   border-top-left-radius: 8px;
   border: 2px solid transparent;
   visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.250);
+  background-color: rgba(173, 216, 230, 0.500);
   backdrop-filter: blur(5px);
   transition: 0.5s;
   opacity: 0;
@@ -594,11 +622,136 @@ window {
   min-width: 382px; 
   min-height: 390px;
 }
-.window9 > .wincontent {
-  width: 300px;
-  height: 300px;
-  min-width: 300px; 
-  min-height: 300px;
+
+
+
+.bubbles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -10%;
+  border-radius: 50%;
+  /* Realistic soap bubble gradient */
+  background: radial-gradient(circle at 30% 30%, 
+      rgba(255, 255, 255, 0.95) 0%, 
+      rgba(255, 255, 255, 0.4) 20%, 
+      rgba(255, 255, 255, 0.1) 50%, 
+      rgba(255, 255, 255, 0.05) 80%,
+      rgba(255, 255, 255, 0.8) 100%
+  );
+  box-shadow: 
+      inset 0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 15px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  opacity: 0.9;
+  animation: floatUp 8s linear forwards;
 }
 
 
+@keyframes floatUp {
+  0% {
+      transform: translateY(0) scale(1);
+      opacity: 0;
+  }
+
+  10% {
+      opacity: 0.9;
+  }
+
+  90% {
+      opacity: 0.9;
+  }
+      99.5% {
+      opacity: 0.9;
+  }
+          99.9% {
+      opacity: 0.5;
+  }
+
+  100% {
+      transform: translateY(-110vh) scale(1.1);
+      opacity: 0;
+  }
+}
+
+
+#firstexperience {
+  z-index: 999999;
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+#firstexperiencewindow {
+  z-index: 999998;
+  height: 88%;
+  width: 88%;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: calc(0% + 10%);
+  margin-top: -50px;
+  backdrop-filter: blur(16px);
+  background: #ffffff1d;
+  border-radius: 10px;
+  border: 2px solid rgba(109, 109, 109, 0.5);
+}
+
+#firstexperience h1 {
+      left: 10px;
+      font-size: xx-large;
+      color: white !important;
+      top: 5px;
+      position: relative;
+}
+#firstexperience h2 {
+  left: 10px;
+  font-size: x-large;
+  top: 0px;
+  color: white !important;
+  position: relative;
+}
+
+#firstexperience input, #firstexperience .centrdAppsTxt, #firstexperience button, #firstexperience a {
+  left: 10px;
+  position: relative;
+  color: white !important;
+}
+#firstexperiencewindow > #usrinpt::placeholder {
+ color: white !important;
+}
+
+
+.FTUEtext {
+  left: 0;
+  right: 0;
+  line-height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -100px;
+  font-size: 45px;
+  position: absolute !important;
+  top: 50%;
+  width: 100%;
+}
+
+
+.confirmButton {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 15%;
+}

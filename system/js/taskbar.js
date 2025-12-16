@@ -74,21 +74,20 @@ function weatherService() {
 
 //Taskbar Search Box
 function taskSearch() {
-	var input, filter, ul, li, a, i, txtValue;
-	input = document.getElementById("taskbarSearch");
-	filter = input.value.toUpperCase();
-	ul = document.getElementsByClassName("applist")[0];
-	li = ul.getElementsByTagName("li");
-	for (i = 0; i < li.length; i++) {
-			a = li[i].getElementsByTagName("a")[0];
-			txtValue = a.textContent || a.innerText;
-			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-					li[i].style.display = "";
-			} else {
-					li[i].style.display = "none";
-			}
-	}
-	document.getElementById("appsmenu").classList.add("opened");
-	document.getElementById("skybutton").classList.add("active");
+    var input, filter, applist, links, i, txtValue;
+    input = document.getElementById("taskbarSearch");
+    filter = input.value.toUpperCase();
+    applist = document.getElementsByClassName("applist")[0];
+    links = applist.getElementsByTagName("a");
+    for (i = 0; i < links.length; i++) {
+            txtValue = links[i].textContent || links[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    links[i].style.display = "";
+            } else {
+                    links[i].style.display = "none";
+            }
+    }
+    document.getElementById("appsmenu").classList.add("opened");
+    document.getElementById("skybutton").classList.add("active");
 
 }

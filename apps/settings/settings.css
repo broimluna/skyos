@@ -10,8 +10,8 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.setab > button, #tabsettings > button, .sbranding > button {
-    top: 5px;
+.setab > button, #tabsettings > button, .sbranding > button, .settingsbutton {
+    /*top: 5px;*/
     position: relative;
     background: rgba(173, 216, 230, 0.500);
     border: 2px solid rgba(0, 0, 0, 0.200);
@@ -33,3 +33,14 @@
   .sbranding {
     text-align: center;
   }
+
+.wallpapersection h2, .colorsection h2 {
+  margin: 0 0 10px 0;
+}
+.themerow h2 {
+  margin: 0 0 5px 0;
+}
+.settingsbutton {
+  top: 8px;
+  margin-bottom: 10px;
+}

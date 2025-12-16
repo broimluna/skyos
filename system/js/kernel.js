@@ -1,7 +1,7 @@
 const developer_name = "Luna";
 const product_name = "skyOS";
 const kernel_version = "2.0";
-const build_number = "900.1";
+const build_number = "1500";
 let dataid = 0;
 let iframei = 1;
 let windowid = 1;
@@ -24,7 +24,7 @@ $(document).ready(() => {
 function updateWatermark() {
     const lastModified = document.lastModified;
     const watermark = document.querySelector("watermark");
-    watermark.innerText = `${developer_name}'s ${product_name}\nVersion ${kernel_version}.${build_number}\nCompiled on ${lastModified}`;
+    //watermark.innerText = `${developer_name}'s ${product_name}\nVersion ${kernel_version}.${build_number}\nCompiled on ${lastModified}`;
 }
 
 function initializeWindows() {
@@ -74,9 +74,20 @@ function setupTaskbar(winElement) {
 }
 
 function attachWindowEvents(winElement) {
-    $(winElement).find(".winclose").click(() => closeWindow(winElement));
-    $(winElement).find(".winminimize").click(() => minimizeWindow(winElement));
-    $(winElement).find(".winmaximize").click(() => maximizeWindow(winElement));
+    $(winElement).find(".winclose").click((e) => {
+        e.stopPropagation();
+        closeWindow(winElement);
+    });
+    
+    $(winElement).find(".winminimize").click((e) => {
+        e.stopPropagation();
+        minimizeWindow(winElement);
+    });
+    
+    $(winElement).find(".winmaximize").click((e) => {
+        e.stopPropagation();
+        maximizeWindow(winElement);
+    });
 }
 
 function closeWindow(winElement) {
@@ -105,8 +116,8 @@ function closeWindow(winElement) {
 
 function minimizeWindow(winElement) {
     const id = $(winElement).attr("data-id");
-    $(winElement).removeClass("opened");
     $(`#minimPanel${id}`).removeClass("active");
+    $(winElement).removeClass("opened");
 }
 
 function maximizeWindow(winElement) {
@@ -141,10 +152,10 @@ function openWindow(id) {
 }
 
 function bringToFront(winElement) {
-    // Update z-index
+    // 1. Update z-index and active state (EXISTING CODE)
     zIndexCounter++;
     $(winElement).css('z-index', zIndexCounter);
-    
+
     // Visual feedback: Highlight active taskbar item
     const id = $(winElement).attr('data-id');
     $("taskbarapp").removeClass("active");
@@ -153,4 +164,27 @@ function bringToFront(winElement) {
     // Visual feedback: Highlight active window header
     $(".winheader").removeClass("active-header");
     $(winElement).find(".winheader").addClass("active-header");
+
+    // 2. NEW FOCUS LOGIC
+    const iframe = $(winElement).find('iframe')[0];
+    if (iframe) {
+        // Use a slight delay to ensure the window is fully brought to front and rendered
+        // before attempting to shift focus into the iframe's document.
+        setTimeout(() => {
+            try {
+                // Focus the iframe element itself
+                iframe.focus(); 
+                
+                // Attempt to focus on an element *inside* the iframe's document
+                // This is often needed for keyboard events to work.
+                // NOTE: This will fail if the iframe content is on a different domain (Cross-Origin Policy).
+                if (iframe.contentWindow) {
+                    iframe.contentWindow.focus();
+                }
+            } catch (e) {
+                // Catches errors due to cross-origin restrictions
+                console.warn("Could not focus iframe content due to security restrictions (Cross-Origin).", e);
+            }
+        }, 10); // Small delay
+    }
 }

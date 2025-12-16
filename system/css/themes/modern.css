@@ -1,0 +1,102 @@
+
+taskbar{
+right: 0;
+width: 98%;
+margin: 0 auto;
+bottom: 5px;
+border-radius: 8px;
+text-align: center;
+}
+
+
+
+#coralaiflyout {
+  bottom: 48px !important;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+#timendateflyout {
+  right: 5px;
+  bottom: 48px !important;
+  border-radius: 8px;
+}
+window.fullSizeWindow {
+  bottom: 0px !important;
+}
+taskbar{
+right: 0;
+width: 98%;
+margin: 0 auto;
+bottom: 5px;
+border-radius: 8px;
+text-align: center;
+}
+#appsmenu {
+  bottom: 48px !important;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 650px;
+}
+
+
+
+taskbarapp {
+  padding: 0px 5px 4px 5px;
+}
+
+
+#timendateflyout {
+  right: 5px;
+  bottom: 48px !important;
+  border-radius: 8px;
+}
+.applist {
+  background: transparent;
+  border: solid 1px transparent;
+  margin: unset !important;
+  /* overflow-y: unset !important; */
+  /* overflow-x: unset !important; */
+  display: block;
+  padding: unset !important;
+  list-style: none;
+  transition: 0.2s;
+  float: left;
+  left: 0;
+}
+
+.applist a {
+  border: solid 1px transparent;
+  display: inline-block;
+  padding: 2px 2px !important;
+  margin: 2px 2px !important;
+  text-decoration: none;
+  min-width: 50px;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.2s;
+  color: black; /* Added line to set text color */
+  text-align: center;
+}
+
+.applist a:hover {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #0000007a;
+  border: 1px solid rgb(0, 0, 0);
+  transition: 0.1s;
+  color: white;
+}
+
+.applist a img {
+  border: 0;
+  vertical-align: middle;
+  margin: unset !important;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.applist a br {
+  display: unset !important;
+}
